@@ -28,13 +28,21 @@ export class AppComponent {
   //   {nome: 'Simona', citta: 'Napoli', eta: 22}
   // ];
     //javascript
-    // constructor(private http: HttpClient){
-    //   this.http.get('assets/user.json');
-    //   this.getJSON().subscribe((res: any) => res.json());
-    // }
-    // public getJSON(): Observable<any> {
-    //   return this.http.get("./assets/mydata.json");
-    // }
+    constructor(private http: HttpClient){
+      this.http.get('assets/user.json').subscribe((response: any) => {
+        for (let i = 0; i < response.user.length; i++ ) //è necessario un ciclo for perchè è un array
+        {
+          this.users.push
+          (
+            {
+              nome: response.nome,
+              citta: response.citta,
+              eta: response.eta
+            }
+          );
+        };
+      });
+    }
   //typescript
   //constructor(){
     // this.users.push(
