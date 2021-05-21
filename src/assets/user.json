@@ -3,17 +3,17 @@
     {
       "nome": "Max",
       "città": "Roma",
-      "età": 33
+      "età": "33"
     },
     {
       "nome": "Mario",
       "città": "Milano",
-      "età": 40
+      "età": "40"
     },
     {
       "nome": "Simona",
       "città": "Napoli",
-      "età": 22
+      "età": "22"
     }
   ]
 }

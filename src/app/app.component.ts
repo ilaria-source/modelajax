@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { Users } from './users.model';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 //import { userInfo } from 'os';
-// import 'rxjs/add/operator/map';
+//import 'rxjs/add/operator/map';
 // import 'rxjs/add/operator/catch';
-// import { Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,13 +14,13 @@ import { HttpClientModule, HttpClient } from '@angular/common/http'
 export class AppComponent {
   title = 'app5-modelajax';
   //i dati si importano nel component principale
-  // users: Users[] = [];
-  // nel momento in cui uso user.json non mi serve più
-  users : Users[] = [
-    new Users('Max', 'Roma', 33),
-    new Users('Mario', 'Milano', 25),
-    new Users('Simona', 'Napoli', 22),
-  ];
+  //users: Users[] = [];
+      // nel momento in cui uso user.json non mi serve più
+      users : Users[] = [
+        new Users('Max', 'Roma', '33'),
+        new Users('Mario', 'Milano', '25'),
+        new Users('Simona', 'Napoli', '22'),
+      ];
   //è identico a questo:
   // users = [
   //   {nome: 'Max', citta: 'Roma', eta: 33},
@@ -29,15 +29,17 @@ export class AppComponent {
   // ];
     //javascript
     constructor(private http: HttpClient){
-      this.http.get('assets/user.json').subscribe((response: any) => {
+      this.http.get('assets/user.json')
+      //.map(res => res.json())
+      .subscribe((response: any) => {
         for (let i = 0; i < response.user.length; i++ ) //è necessario un ciclo for perchè è un array
         {
           this.users.push
           (
             {
-              nome: response.nome,
-              citta: response.citta,
-              eta: response.eta
+              nome: response.user[i].nome,
+              citta: response.user[i].citta,
+              eta: response.user[i].eta
             }
           );
         };
@@ -49,4 +51,8 @@ export class AppComponent {
     //   {nome: 'Valeria', citta: 'Taranto', eta: 55}
     // );
  // }
+ getUser(user: Users)
+ {
+    this.users.push(user);
+ }
 }
