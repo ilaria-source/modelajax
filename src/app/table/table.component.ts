@@ -8,7 +8,11 @@ import { Users } from '../users.model';
 })
 export class TableComponent implements OnInit {
   @Input() users : Users[] = [];
-  
+  // fin quando non esiste il model si scrive così:
+  // @Input() users: [
+  //   {nome: string, citta:string, eta:number}
+  // ];
+
   constructor() { }
 
   ngOnInit(): void {

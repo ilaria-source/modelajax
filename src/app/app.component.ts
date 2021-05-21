@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { Users } from './users.model';
+import { HttpClientModule, HttpClient } from '@angular/common/http'
+//import { userInfo } from 'os';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/catch';
+// import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +14,8 @@ import { Users } from './users.model';
 export class AppComponent {
   title = 'app5-modelajax';
   //i dati si importano nel component principale
+  // users: Users[] = [];
+  // nel momento in cui uso user.json non mi serve più
   users : Users[] = [
     new Users('Max', 'Roma', 33),
     new Users('Mario', 'Milano', 25),
@@ -20,9 +27,18 @@ export class AppComponent {
   //   {nome: 'Mario', citta: 'Milano', eta: 25},
   //   {nome: 'Simona', citta: 'Napoli', eta: 22}
   // ];
-  constructor(){
-    this.users.push(
-      {nome: 'Valeria', citta: 'Taranto', eta: 55}
-    );
-  }
+    //javascript
+    // constructor(private http: HttpClient){
+    //   this.http.get('assets/user.json');
+    //   this.getJSON().subscribe((res: any) => res.json());
+    // }
+    // public getJSON(): Observable<any> {
+    //   return this.http.get("./assets/mydata.json");
+    // }
+  //typescript
+  //constructor(){
+    // this.users.push(
+    //   {nome: 'Valeria', citta: 'Taranto', eta: 55}
+    // );
+ // }
 }
