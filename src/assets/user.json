@@ -1,0 +1,19 @@
+
+  [
+    {
+      "nome": "Max",
+      "citta": "Roma",
+      "eta": "33"
+    },
+    {
+      "nome": "Mario",
+      "citta": "Milano",
+      "eta": "40"
+    },
+    {
+      "nome": "Simona",
+      "citta": "Napoli",
+      "eta": "22"
+    }
+  ]
+
